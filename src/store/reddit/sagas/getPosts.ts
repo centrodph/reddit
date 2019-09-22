@@ -6,8 +6,8 @@ function* getPosts() {
   try {
     let response: RedditPostResponse = yield call(createApiCall, {
       method: MethodType.GET,
-      url: `https://raw.githubusercontent.com/deviget/Front-end/master/top.json?token=AAP2KXY3CS5TKK3C3D66WFK5SABNE`
-    });
+      url: `https://redditgp.herokuapp.com/top.json`
+    }); 
     yield put({
       type: ActionType.REDDIT_POST_REQUEST_SUCCESS,
       payload: response
