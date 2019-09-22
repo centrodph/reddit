@@ -1,13 +1,20 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectAppVersion } from "selectors";
+import { selectAppVersion, selectRedditLoading } from "selectors";
 import { getRedditPost } from "actions";
+import { Sidebar, Content } from "components";
 
 export function Reddit() {
   const dispatch = useDispatch();
+  const loading = useSelector(selectRedditLoading);
   useEffect(() => {
-    console.log("Reddit");
-    dispatch(getRedditPost())
+    dispatch(getRedditPost());
   }, []);
-  return <div className="App">clean app</div>;
+  return (
+    <div className="reddit-main">
+      {loading && "loading"}
+      <Sidebar />
+      <Content />
+    </div>
+  );
 }

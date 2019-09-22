@@ -1,22 +1,22 @@
 import { Action, ActionType, RedditPost, RedditPostResponse } from "models";
 import createReducer from "../createReducer";
 
-export interface TranslationsReducerType {
+export interface RedditReducerType {
   list: RedditPost[];
   loading: boolean;
   error?: string;
 }
-const defaultState: TranslationsReducerType = {
+const defaultState: RedditReducerType = {
   list: [],
   loading: false,
   error: undefined
 };
 
-export const translationReducer = createReducer<TranslationsReducerType>(
+export const redditReducer = createReducer<RedditReducerType>(
   defaultState,
   {
     [ActionType.REDDIT_POST_REQUEST](
-      state: TranslationsReducerType,
+      state: RedditReducerType,
       action: Action<undefined>
     ) {
       return {
@@ -26,7 +26,7 @@ export const translationReducer = createReducer<TranslationsReducerType>(
     },
 
     [ActionType.REDDIT_POST_REQUEST_ERROR](
-      state: TranslationsReducerType,
+      state: RedditReducerType,
       action: Action<any>
     ) {
       return {
@@ -36,7 +36,7 @@ export const translationReducer = createReducer<TranslationsReducerType>(
       };
     },
     [ActionType.REDDIT_POST_REQUEST_SUCCESS](
-      state: TranslationsReducerType,
+      state: RedditReducerType,
       action: Action<RedditPostResponse>
     ) {
       return {

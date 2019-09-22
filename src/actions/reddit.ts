@@ -1,4 +1,4 @@
-import { ActionType } from "models";
+    import { ActionType } from "models";
 
 export function getRedditPost() {
   return {
