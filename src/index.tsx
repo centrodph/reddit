@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Store from "store/Store";
 import * as serviceWorker from "./serviceWorker";
+import './assets/app.css'
 
 ReactDOM.render(<Store />, document.getElementById("root"));
 
