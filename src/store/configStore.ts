@@ -1,4 +1,4 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { persistReducer, persistStore } from "redux-persist";
 import * as localforage from "localforage";
@@ -18,8 +18,19 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
+const composeEnhancers =
+  typeof window === "object" &&
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+      })
+    : compose;
+
 export default () => {
-  const store = createStore(persistedReducer, applyMiddleware(sagaMiddleware));
+  const store = createStore(
+    persistedReducer,
+    composeEnhancers(applyMiddleware(sagaMiddleware))
+  );
   const persistor = persistStore(store);
   return {
     store,
