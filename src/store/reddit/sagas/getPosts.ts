@@ -1,4 +1,4 @@
-import { put, takeLatest, call, delay } from "redux-saga/effects";
+import { put, takeLatest, call } from "redux-saga/effects";
 import { createApiCall, MethodType } from "store/api";
 import { ActionType, RedditPostResponse } from "models";
 
