@@ -13,7 +13,7 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage: localforage,
-  whitelist: []
+  whitelist: ['reddit']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
