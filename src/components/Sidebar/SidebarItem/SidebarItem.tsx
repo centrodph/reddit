@@ -11,8 +11,9 @@ export function SidebarItem({ item }: { item: RedditPost }) {
     data: { author, created_utc, id, num_comments, thumbnail, title }
   } = item;
   const dispatch = useDispatch();
-  function handleClick() {
-    dispatch(viewRedditPost(item));
+  function handleClick(e: any) {
+    if (e.key === "Enter" || e.key === undefined)
+      dispatch(viewRedditPost(item));
   }
 
   return (
@@ -21,9 +22,10 @@ export function SidebarItem({ item }: { item: RedditPost }) {
       role="button"
       tabIndex={0}
       onClick={handleClick}
+      onKeyPress={handleClick}
     >
       <SidebarHeader author={author} time={created_utc} id={id} />
-      <SidebarContent thumb={thumbnail} title={title}/>
+      <SidebarContent thumb={thumbnail} title={title} />
       <SidebarFooter comments={num_comments} id={id} />
     </div>
   );

@@ -62,6 +62,10 @@ a {
   height: 9rem;
   margin-bottom: 1rem;
   position: relative;
+  outline: none;
+}
+.sidebar-item:focus {
+  background: radial-gradient(circle, rgba(238,174,202,0.1) 0%, rgba(148,187,233,0.11) 100%);
 }
 .sidebar-item:after {
   display: block;
