@@ -68,7 +68,8 @@ a {
   color: gray;
 }
 
-.sidebar-item-header__author, .sidebar-item-header__time {
+.sidebar-item-header__author,
+.sidebar-item-header__time {
   font-size: 0.6rem;
   flex: 1;
   flex-grow: 0;
@@ -77,6 +78,15 @@ a {
   word-wrap: nowrap;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.sidebar-item-header__viewed {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: rgba(255, 120, 0, 0.2);
+}
+.sidebar-item-header__viewed.new {
+  background: rgba(111, 214, 255, 1);
 }
 .sidebar-item-header__author {
   font-size: 0.8rem;

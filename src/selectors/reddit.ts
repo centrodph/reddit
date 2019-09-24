@@ -13,6 +13,6 @@ export function selectRedditList(state: RootState): RedditPost[] {
   return selectReddit(state).list;
 }
 
-export function selectIsVisited(state: RootState, id: string): RedditPost[] {
-  return selectReddit(state).list;
+export function selectIsVisited(state: RootState, id: string): boolean {
+  return selectReddit(state).viewed.indexOf(id) > -1;
 }
