@@ -1,4 +1,4 @@
-    import { ActionType, RedditPost } from "models";
+import { ActionType, RedditPost } from "models";
 
 export function getRedditPost() {
   return {
@@ -9,6 +9,19 @@ export function getRedditPost() {
 export function viewRedditPost(payload: RedditPost) {
   return {
     type: ActionType.REDDIT_POST_VIEW,
-    payload,
+    payload
+  };
+}
+
+export function dismissRedditPost(payload: string) {
+  return {
+    type: ActionType.REDDIT_POST_DISMISS,
+    payload
+  };
+}
+
+export function dismissAllRedditPost() {
+  return {
+    type: ActionType.REDDIT_POST_DISMISS_ALL
   };
 }
