@@ -19,6 +19,12 @@ export function dismissRedditPost(payload: string) {
     payload
   };
 }
+export function removeRedditPost(payload: string) {
+  return {
+    type: ActionType.REDDIT_POST_REMOVE,
+    payload
+  };
+}
 
 export function dismissAllRedditPost() {
   return {

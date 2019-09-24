@@ -16,3 +16,7 @@ export function selectRedditList(state: RootState): RedditPost[] {
 export function selectIsVisited(state: RootState, id: string): boolean {
   return selectReddit(state).viewed.indexOf(id) > -1;
 }
+export function selectDismissing(state: RootState, id: string): boolean {
+  console.log(selectReddit(state).dismiss);
+  return selectReddit(state).dismiss.indexOf(id) > -1;
+}

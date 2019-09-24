@@ -11,7 +11,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const persistConfig = {
   key: "root",
-  version: 1,
+  version: 3,
   storage: localforage,
   whitelist: ['reddit']
 };
