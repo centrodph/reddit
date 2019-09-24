@@ -1,8 +1,5 @@
-import React, { useMemo, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectIsVisited } from "selectors";
-import { RootState } from "models";
-import { unixTimestampToDate } from "utils";
+import React, { useCallback } from "react";
+import { useDispatch } from "react-redux";
 import { dismissRedditPost } from "actions";
 
 interface SidebarFooterProps {

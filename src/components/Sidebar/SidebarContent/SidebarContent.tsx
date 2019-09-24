@@ -1,8 +1,4 @@
-import React, { useMemo } from "react";
-import { useSelector } from "react-redux";
-import { selectIsVisited } from "selectors";
-import { RootState } from "models";
-import { unixTimestampToDate } from "utils";
+import React from "react";
 
 interface SidebarContentProps {
   title: string;
@@ -14,7 +10,7 @@ export function SidebarContent({ title, thumb }: SidebarContentProps) {
     <div className="sidebar-item-content">
       {thumb && (
         <div className="sidebar-item-content__thumb">
-          <img src={thumb} />
+          <img src={thumb} alt={title} />
         </div>
       )}
 
