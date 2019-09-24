@@ -7,7 +7,7 @@ import { viewRedditPost } from "actions";
 
 export function SidebarItem({ item }: { item: RedditPost }) {
   const {
-    data: { author, created_utc }
+    data: { author, created_utc, id }
   } = item;
   const dispatch = useDispatch();
   function handleClick() {
@@ -21,7 +21,7 @@ export function SidebarItem({ item }: { item: RedditPost }) {
       tabIndex={0}
       onClick={handleClick}
     >
-      <SidebarHeader author={item.data.author} time={created_utc} />
+      <SidebarHeader author={author} time={created_utc} id={id} />
     </div>
   );
 }

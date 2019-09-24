@@ -1,6 +1,5 @@
-import { RootState } from "store/rootReducer";
 import { RedditReducerType } from "store/reddit/redditReducer";
-import { RedditPost } from "models";
+import { RootState, RedditPost } from "models";
 
 export function selectReddit(state: RootState): RedditReducerType {
   return state.reddit;
@@ -11,5 +10,9 @@ export function selectRedditLoading(state: RootState): boolean {
 }
 
 export function selectRedditList(state: RootState): RedditPost[] {
+  return selectReddit(state).list;
+}
+
+export function selectIsVisited(state: RootState, id: string): RedditPost[] {
   return selectReddit(state).list;
 }
