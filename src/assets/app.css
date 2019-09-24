@@ -190,4 +190,5 @@ a {
 .content {
   width: calc(100% - var(--sidebar));
   border: solid 1px gray;
+  padding: 2rem;
 }
